@@ -1,0 +1,1087 @@
+/* ==========================================================================
+   Метафорическое тело эмоций — стили сайта
+   Этапы 1–8: HTML-семантика, база CSS, Flexbox, Grid,
+   позиционирование, анимации, адаптив.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Переменные (цвета, радиусы, тени, отступы)
+   -------------------------------------------------------------------------- */
+:root {
+  --color-bg: #f3f4f6;
+  --color-surface: #ffffff;
+  --color-text: #111827;
+  --color-text-soft: #374151;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-accent: #4f46e5;
+  --color-accent-dark: #4338ca;
+  --color-accent-soft: #eef2ff;
+  --color-metaphor-bg: #f8fafc;
+  --color-metaphor-border: #c7d2fe;
+  --color-btn-bg: #e5e7eb;
+  --color-btn-bg-hover: #d1d5db;
+  --color-error: #b91c1c;
+
+  --radius-sm: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 3px rgba(17, 24, 39, 0.12), 0 1px 2px rgba(17, 24, 39, 0.08);
+  --shadow-md: 0 8px 20px rgba(17, 24, 39, 0.12);
+  --shadow-lg: 0 24px 48px rgba(17, 24, 39, 0.28);
+
+  --container: 1200px;
+  --transition: 0.25s ease;
+}
+
+/* Тёмная тема подготовлена для этапа JavaScript:
+   скрипт будет ставить <body data-theme="dark">. */
+body[data-theme="dark"] {
+  --color-bg: #111827;
+  --color-surface: #1f2937;
+  --color-text: #f9fafb;
+  --color-text-soft: #e5e7eb;
+  --color-muted: #9ca3af;
+  --color-border: #374151;
+  --color-accent: #6366f1;
+  --color-accent-dark: #818cf8;
+  --color-accent-soft: #1e1b4b;
+  --color-metaphor-bg: #111827;
+  --color-metaphor-border: #4338ca;
+  --color-btn-bg: #374151;
+  --color-btn-bg-hover: #4b5563;
+  --color-error: #fca5a5;
+}
+
+/* --------------------------------------------------------------------------
+   2. База документа
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Блокировка прокрутки страницы, пока открыто модальное окно */
+.page--locked {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", Arial, sans-serif;
+  line-height: 1.25;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+button {
+  font: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   3. Утилиты
+   -------------------------------------------------------------------------- */
+.container {
+  width: 90%;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.6rem 1rem;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Сообщение для браузеров с отключённым JavaScript */
+.noscript {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 300;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #b91c1c;
+}
+
+/* --------------------------------------------------------------------------
+   4. Шапка
+   -------------------------------------------------------------------------- */
+.header {
+  padding: 3rem 0 1.5rem;
+  text-align: center;
+}
+
+.header__eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.header__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+
+.header__subtitle {
+  max-width: 42rem;
+  margin: 0.75rem auto 0;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: var(--color-text-soft);
+}
+
+/* --------------------------------------------------------------------------
+   5. Панель кнопок — Flexbox
+   -------------------------------------------------------------------------- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.toolbar__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background-color: var(--color-btn-bg);
+  border: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition), background-color var(--transition),
+    box-shadow var(--transition), color var(--transition);
+}
+
+.toolbar__btn:hover {
+  background-color: var(--color-btn-bg-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.toolbar__btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.toolbar__btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.toolbar__btn--accent {
+  color: #ffffff;
+  background-color: var(--color-accent);
+}
+
+.toolbar__btn--accent:hover {
+  background-color: var(--color-accent-dark);
+}
+
+/* --------------------------------------------------------------------------
+   6. Сетка карточек органов — CSS Grid
+   -------------------------------------------------------------------------- */
+.main {
+  padding-bottom: 3rem;
+}
+
+.organs {
+  padding: 1.5rem 0 2rem;
+}
+
+.organs__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* Сообщение о загрузке / ошибке вместо карточек */
+.organs__status {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.organs__status--error {
+  color: var(--color-error);
+}
+
+.organ-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.75rem 1rem;
+  overflow: hidden;
+  color: inherit;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition),
+    background-color var(--transition);
+}
+
+/* Псевдоэлемент — цветная полоса, появляющаяся при наведении */
+.organ-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.organ-card:hover {
+  background-color: var(--color-accent-soft);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+}
+
+.organ-card:hover::before {
+  transform: scaleX(1);
+}
+
+.organ-card:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.organ-card__icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  transition: transform var(--transition);
+}
+
+.organ-card:hover .organ-card__icon {
+  transform: scale(1.15) rotate(-3deg);
+}
+
+.organ-card__name {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.organ-card__name-en {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* В английской версии не дублируем название */
+html[lang="en"] .organ-card__name-en,
+html[lang="en"] .modal__title-en {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. Модальные окна — position: fixed + z-index
+   Открываются классом .modal--open (см. js/modal.js).
+   -------------------------------------------------------------------------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.modal--open {
+  display: flex;
+  animation: fade-in 0.25s ease;
+}
+
+/* Прозрачный слой на весь экран: клик по фону закрывает окно */
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  cursor: pointer;
+}
+
+.modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 896px;
+  margin: auto;
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: modal-in 0.28s ease;
+}
+
+.modal__close {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  float: right;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  margin: -0.5rem -0.5rem 0 0;
+  font-family: inherit;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-muted);
+  background-color: var(--color-surface);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color var(--transition), background-color var(--transition),
+    transform var(--transition);
+}
+
+.modal__close:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transform: rotate(90deg);
+}
+
+.modal__head {
+  display: flex;
+  clear: both;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal__icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.modal__title--center {
+  text-align: center;
+}
+
+.modal__title-en {
+  display: block;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.modal__desc {
+  margin: 0.35rem 0 0;
+  color: var(--color-text-soft);
+}
+
+.modal__section-title {
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal__count {
+  display: inline-block;
+  min-width: 1.6rem;
+  padding: 0 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-pill);
+  vertical-align: middle;
+}
+
+.modal__analysis {
+  margin: 0;
+  color: var(--color-text-soft);
+  white-space: pre-line;
+}
+
+.modal__text {
+  margin: 0.75rem 0;
+  color: var(--color-text-soft);
+}
+
+.modal__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--color-text-soft);
+}
+
+.modal__list li {
+  margin-bottom: 0.4rem;
+}
+
+.modal__list code,
+.modal__text code {
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+  background-color: var(--color-bg);
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Список метафор
+   -------------------------------------------------------------------------- */
+.metaphors {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metaphor {
+  padding: 1rem;
+  background-color: var(--color-metaphor-bg);
+  border: 1px solid var(--color-metaphor-border);
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.metaphor:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.metaphor__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.metaphor__icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.metaphor__quote {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.metaphor__rows {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.85rem 0 0;
+}
+
+.metaphor__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.1rem;
+}
+
+.metaphor__label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.metaphor__value {
+  margin: 0;
+  color: var(--color-text-soft);
+}
+
+/* --------------------------------------------------------------------------
+   9. Подвал
+   -------------------------------------------------------------------------- */
+.footer {
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.footer__note {
+  max-width: 38rem;
+  margin: 0.4rem auto 0;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* --------------------------------------------------------------------------
+   10. Форма обратной связи
+   -------------------------------------------------------------------------- */
+.modal__dialog--narrow {
+  max-width: 560px;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+/* Атрибут hidden должен побеждать display: grid */
+.form[hidden],
+.form__success[hidden] {
+  display: none;
+}
+
+.form__row {
+  display: grid;
+  gap: 1rem;
+}
+
+.form__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form__input::placeholder {
+  color: var(--color-muted);
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.form__input--area {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+/* Поле с ошибкой */
+.form__input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.form__error {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-error);
+}
+
+.form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.form__checkbox input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.form__submit {
+  justify-self: start;
+  padding: 0.7rem 1.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.form__submit:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.form__submit:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.form__submit:active {
+  transform: translateY(1px);
+}
+
+.form__success {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  color: var(--color-text-soft);
+  background-color: var(--color-accent-soft);
+  border: 1px solid var(--color-metaphor-border);
+  border-radius: var(--radius-sm);
+}
+
+.form__success p {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   11. Чат-помощник
+   -------------------------------------------------------------------------- */
+.chat {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 90;
+}
+
+.chat__launcher {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.chat__launcher:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+}
+
+.chat__launcher:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.chat__panel {
+  position: absolute;
+  right: 0;
+  bottom: 4.5rem;
+  display: none;
+  flex-direction: column;
+  width: min(380px, calc(100vw - 2rem));
+  height: min(560px, calc(100vh - 7rem));
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.chat--open .chat__panel {
+  display: flex;
+  animation: chat-in 0.22s ease;
+}
+
+.chat__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.chat__title {
+  margin: 0;
+  font-weight: 700;
+}
+
+.chat__status {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.chat__close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font-family: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--color-muted);
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.chat__close:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.chat__log {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.chat__msg {
+  max-width: 88%;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-radius: 0.9rem;
+}
+
+.chat__msg--bot {
+  align-self: flex-start;
+  color: var(--color-text-soft);
+  background-color: var(--color-bg);
+  border-bottom-left-radius: 0.25rem;
+}
+
+.chat__msg--user {
+  align-self: flex-end;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border-bottom-right-radius: 0.25rem;
+}
+
+.chat__text {
+  margin: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.chat__msg--typing .chat__text {
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+.chat__chips {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  overflow-x: auto;
+  border-top: 1px solid var(--color-border);
+}
+
+.chat__chip {
+  flex-shrink: 0;
+  padding: 0.35rem 0.7rem;
+  font-family: inherit;
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.chat__chip:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.chat__form {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem 1rem;
+}
+
+.chat__input {
+  flex: 1;
+  max-height: 120px;
+  padding: 0.6rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  resize: none;
+}
+
+.chat__input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.chat__send {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color var(--transition), opacity var(--transition);
+}
+
+.chat__send:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.chat__send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   12. Анимации — @keyframes
+   -------------------------------------------------------------------------- */
+@keyframes chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   13. Адаптив — mobile first
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) {
+  .organs__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .modal__head {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .modal__desc {
+    margin-top: 0.25rem;
+  }
+
+  .metaphor__head {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .metaphor__row {
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem;
+  }
+
+  .modal__dialog {
+    padding: 2rem;
+  }
+
+  .form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .organs__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  .organ-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .organ-card__icon {
+    width: 84px;
+    height: 84px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 92%;
+  }
+
+  .header {
+    padding-top: 2rem;
+  }
+
+  .toolbar {
+    gap: 0.5rem;
+  }
+
+  .toolbar__btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .modal {
+    padding: 0.5rem;
+  }
+
+  .modal__dialog {
+    padding: 1.1rem;
+  }
+
+  .modal__title {
+    font-size: 1.35rem;
+  }
+
+  .chat__panel {
+    position: fixed;
+    right: 0.75rem;
+    bottom: 5rem;
+    left: 0.75rem;
+    width: auto;
+    height: calc(100vh - 6.5rem);
+    max-height: 560px;
+  }
+}
+
+/* Уважение к настройке «уменьшить движение» */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

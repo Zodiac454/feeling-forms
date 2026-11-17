@@ -1,0 +1,11 @@
+# Служебные файлы ОС и редакторов
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Ключи и локальные настройки сервера (не публиковать)
+deepseek.key
+.env
+__pycache__/

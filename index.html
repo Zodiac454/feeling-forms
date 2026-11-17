@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Исследование метафор частей тела в романах Дж. К. Роулинг о Гарри Поттере: как через лицо, голову, желудок, сердце, грудь и ноги передаются эмоции.">
+  <meta name="keywords" content="метафора, части тела, эмоции, Гарри Поттер, лингвистика, веб-сайт">
+  <meta name="author" content="Учебный проект">
+  <title>Метафорическое тело эмоций</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="module" src="js/main.js"></script>
+</head>
+<body class="page">
+  <a class="skip-link" href="#organs">Перейти к содержанию</a>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <p class="header__eyebrow">Исследование · Дж. К. Роулинг</p>
+      <h1 class="header__title">Метафорическое тело эмоций</h1>
+      <p class="header__subtitle">
+        использование частей тела в передаче душевных состояний в английском языке
+      </p>
+
+      <nav class="toolbar" aria-label="Управление сайтом">
+        <a class="toolbar__btn" href="#about" data-modal="about">ℹ️ О проекте</a>
+        <button class="toolbar__btn" type="button" data-modal="feedback">
+          ✉️ Обратная связь
+        </button>
+        <button class="toolbar__btn" type="button" data-action="toggle-lang" aria-pressed="false">
+          EN English
+        </button>
+        <a
+          class="toolbar__btn"
+          href="https://docs.google.com/document/d/1WrMuBS1FWpzrXZ2TnGs1gtF_cVvHl3O6/edit?usp=sharing&ouid=112364124388248612402&rtpof=true&sd=true"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📄 Первоисточник
+        </a>
+        <button
+          class="toolbar__btn toolbar__btn--accent"
+          type="button"
+          data-action="toggle-theme"
+          aria-label="Включить тёмную тему"
+          aria-pressed="false"
+        >
+          ☀️
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Основное содержимое -->
+  <main class="main">
+    <section class="organs" id="organs" aria-labelledby="organs-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="organs-title">Части тела</h2>
+        <div class="organs__grid" id="organs-grid">
+          <p class="organs__status">Загрузка данных…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">
+        © 2026 · Учебный проект по метафорам частей тела ·
+      </p>
+      <p class="footer__note">
+        Сайт создан как интерактивное приложение к исследованию душевных состояний в английском языке.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Сюда JavaScript вставляет модальные окна -->
+  <div id="modals"></div>
+
+  <noscript>
+    <p class="noscript">
+      Для работы сайта нужен JavaScript: он загружает данные и открывает карточки.
+    </p>
+  </noscript>
+
+  <!-- ======================================================================
+       Шаблоны. Разметка хранится отдельно от данных и логики.
+       ====================================================================== -->
+
+  <!-- Карточка органа -->
+  <template id="tpl-organ-card">
+    <a class="organ-card">
+      <img class="organ-card__icon" alt="" width="72" height="72" loading="lazy">
+      <span class="organ-card__name" data-i18n></span>
+      <span class="organ-card__name-en" lang="en"></span>
+    </a>
+  </template>
+
+  <!-- Модальное окно органа -->
+  <template id="tpl-organ-modal">
+    <section class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal__overlay" data-close></div>
+
+      <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close aria-label="Закрыть окно">
+          &times;
+        </button>
+
+        <header class="modal__head">
+          <img class="modal__icon" alt="" width="80" height="80">
+          <div>
+            <h2 class="modal__title">
+              <span data-i18n></span>
+              <span class="modal__title-en" lang="en"></span>
+            </h2>
+            <p class="modal__desc" data-i18n></p>
+          </div>
+        </header>
+
+        <h3 class="modal__section-title">Анализ</h3>
+        <p class="modal__analysis" data-i18n></p>
+
+        <h3 class="modal__section-title">
+          Метафоры <span class="modal__count"></span>
+        </h3>
+        <ul class="metaphors"></ul>
+      </div>
+    </section>
+  </template>
+
+  <!-- Одна метафора -->
+  <template id="tpl-metaphor">
+    <li class="metaphor">
+      <div class="metaphor__head">
+        <img class="metaphor__icon" alt="" width="64" height="64" loading="lazy">
+        <p class="metaphor__quote"></p>
+      </div>
+
+      <dl class="metaphor__rows">
+        <div class="metaphor__row">
+          <dt class="metaphor__label">Эмоция:</dt>
+          <dd class="metaphor__value" data-field="emotion"></dd>
+        </div>
+        <div class="metaphor__row">
+          <dt class="metaphor__label">Образность:</dt>
+          <dd class="metaphor__value" data-field="imagery"></dd>
+        </div>
+        <div class="metaphor__row">
+          <dt class="metaphor__label">Синтаксическая структура:</dt>
+          <dd class="metaphor__value" data-field="structure"></dd>
+        </div>
+        <div class="metaphor__row">
+          <dt class="metaphor__label">Концептуальный анализ:</dt>
+          <dd class="metaphor__value" data-field="concept"></dd>
+        </div>
+        <div class="metaphor__row">
+          <dt class="metaphor__label">Тип:</dt>
+          <dd class="metaphor__value" data-field="type"></dd>
+        </div>
+        <div class="metaphor__row">
+          <dt class="metaphor__label">Частотность:</dt>
+          <dd class="metaphor__value" data-field="frequency"></dd>
+        </div>
+      </dl>
+    </li>
+  </template>
+
+  <!-- Модальное окно «О проекте» -->
+  <template id="tpl-about">
+    <section class="modal" id="about" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal__overlay" data-close></div>
+
+      <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close aria-label="Закрыть окно">
+          &times;
+        </button>
+
+        <h2 class="modal__title modal__title--center"></h2>
+        <p class="modal__text" data-intro></p>
+        <div data-blocks></div>
+        <p class="modal__text" data-outro></p>
+      </div>
+    </section>
+  </template>
+
+  <!-- Блок «О проекте»: заголовок + список -->
+  <template id="tpl-about-block">
+    <h3 class="modal__section-title"></h3>
+    <ul class="modal__list"></ul>
+  </template>
+
+  <!-- Модальное окно «Обратная связь» с формой -->
+  <template id="tpl-feedback">
+    <section
+      class="modal"
+      id="feedback"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="feedback-title"
+    >
+      <div class="modal__overlay" data-close></div>
+
+      <div class="modal__dialog modal__dialog--narrow">
+        <button class="modal__close" type="button" data-close aria-label="Закрыть окно">
+          &times;
+        </button>
+
+        <h2 class="modal__title" id="feedback-title" data-ru="Обратная связь" data-en="Feedback">
+          Обратная связь
+        </h2>
+        <p
+          class="modal__text"
+          data-ru="Нашли ошибку или хотите что-то предложить? Напишите нам."
+          data-en="Found a mistake or have a suggestion? Write to us."
+        >
+          Нашли ошибку или хотите что-то предложить? Напишите нам.
+        </p>
+
+        <!-- Форма. novalidate — проверку делаем сами в js/feedback.js -->
+        <form class="form" id="feedback-form" novalidate>
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="feedback-name" data-ru="Имя" data-en="Name">
+                Имя
+              </label>
+              <input
+                class="form__input"
+                id="feedback-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Айгерим"
+              >
+              <p class="form__error" data-error-for="name"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="feedback-email" data-ru="Email" data-en="Email">
+                Email
+              </label>
+              <input
+                class="form__input"
+                id="feedback-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+              >
+              <p class="form__error" data-error-for="email"></p>
+            </div>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="feedback-message" data-ru="Сообщение" data-en="Message">
+              Сообщение
+            </label>
+            <textarea
+              class="form__input form__input--area"
+              id="feedback-message"
+              name="message"
+              rows="4"
+              placeholder="Ваш отзыв или предложение…"
+            ></textarea>
+            <p class="form__error" data-error-for="message"></p>
+          </div>
+
+          <div class="form__field">
+            <label class="form__checkbox">
+              <input type="checkbox" name="consent">
+              <span data-ru="Согласен на обработку данных" data-en="I agree to data processing">
+                Согласен на обработку данных
+              </span>
+            </label>
+            <p class="form__error" data-error-for="consent"></p>
+          </div>
+
+          <button class="form__submit" type="submit" data-ru="Отправить" data-en="Send">
+            Отправить
+          </button>
+        </form>
+
+        <!-- Сообщение об успешной отправке -->
+        <div class="form__success" data-success hidden>
+          <p
+            data-ru="Спасибо! Сообщение сохранено."
+            data-en="Thank you! Your message has been saved."
+          >
+            Спасибо! Сообщение сохранено.
+          </p>
+          <button class="form__submit" type="button" data-close data-ru="Закрыть" data-en="Close">
+            Закрыть
+          </button>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <!-- Плавающий помощник: кнопка и панель чата -->
+  <template id="tpl-chat">
+    <div class="chat">
+      <button
+        class="chat__launcher"
+        type="button"
+        data-chat-open
+        aria-expanded="false"
+        aria-controls="chat-panel"
+        aria-label="Открыть помощника"
+      >
+        💬
+      </button>
+
+      <section class="chat__panel" id="chat-panel" aria-label="Помощник по метафорам">
+        <header class="chat__head">
+          <div>
+            <p class="chat__title">Помощник</p>
+            <p class="chat__status" data-chat-status>проверяю связь…</p>
+          </div>
+          <button class="chat__close" type="button" data-chat-close aria-label="Закрыть чат">
+            &times;
+          </button>
+        </header>
+
+        <div class="chat__log" data-chat-log aria-live="polite"></div>
+
+        <div class="chat__chips" data-chat-chips>
+          <button class="chat__chip" type="button" data-chip>
+            Почему желудок связан со страхом?
+          </button>
+          <button class="chat__chip" type="button" data-chip>Метафоры сердца</button>
+          <button class="chat__chip" type="button" data-chip>Сколько всего метафор?</button>
+          <button class="chat__chip" type="button" data-chip>О проекте</button>
+        </div>
+
+        <form class="chat__form">
+          <label class="visually-hidden" for="chat-input">Ваш вопрос</label>
+          <textarea
+            class="chat__input"
+            id="chat-input"
+            rows="1"
+            maxlength="1000"
+            placeholder="Спросите о метафорах…"
+          ></textarea>
+          <button class="chat__send" type="submit" aria-label="Отправить вопрос">➤</button>
+        </form>
+      </section>
+    </div>
+  </template>
+
+  <!-- Одно сообщение чата -->
+  <template id="tpl-chat-msg">
+    <div class="chat__msg">
+      <p class="chat__text"></p>
+    </div>
+  </template>
+</body>
+</html>

@@ -1,0 +1,408 @@
+[
+  {
+    "id": "face",
+    "name": "Лицо",
+    "englishName": "Face",
+    "image": "images/organ-1.png",
+    "description": {
+      "ru": "Центр выражения эмоций через физиологические реакции",
+      "en": "Center of emotional expression through physiological reactions"
+    },
+    "metaphors": [
+      {
+        "quote": "He felt the heart rise in his face and neck. (Rowling, 2000: 261)",
+        "emotion": "Волнение, повышение температуры лица.",
+        "imagery": "Образ восходящего тепла, связанный с усиленной работой сердца при волнении.",
+        "structure": "Сложное дополнение (Complex Object): 'felt the heart rise'.",
+        "concept": "Физиологическое обоснование: при волнении учащается сердцебиение, кровь приливает к лицу, вызывая ощущение жара.",
+        "type": "Сенсорная (тепло → эмоция), физиологическая.",
+        "frequency": "Распространённая",
+        "image": "images/metaphor-1-1.png"
+      },
+      {
+        "quote": "... feeling distinctly hot in the face. (Rowling, 1998: 21)",
+        "emotion": "Смущение, стеснение.",
+        "imagery": "Прилагательное 'hot' обозначает жар, который связан с эмоциональным смущением.",
+        "structure": "Глагольная конструкция с причастием: 'feeling hot in the face'.",
+        "concept": "Жар в лице ассоциируется с физиологической реакцией на смущение или неловкость.",
+        "type": "Сенсорная (температура → эмоция), физиологическая.",
+        "frequency": "Распространённая",
+        "image": "images/metaphor-1-2.png"
+      },
+      {
+        "quote": "Now it felt as though cold hands were slapping his face. (Rowling, 1998: 57)",
+        "emotion": "Страх, тревога.",
+        "imagery": "Образ холодных рук, ударяющих по лицу, передает неожиданное и неприятное ощущение.",
+        "structure": "Сравнительная конструкция 'felt as though' + метафорический объект.",
+        "concept": "Физическое ощущение холода часто ассоциируется с испугом или внезапной тревогой.",
+        "type": "Сенсорная (холод → эмоция), сравнительная.",
+        "frequency": "Средняя",
+        "image": "images/metaphor-1-3.png"
+      }
+    ],
+    "analysis": {
+      "ru": "\nЛицо как центр выражения эмоций через физиологические реакции:\n- Температура лица передает внутреннее состояние: жар ('hot in the face') связан с волнением и смущением.\n- Холод ('cold hands slapping his face') отражает страх и тревогу.\nМетафоры с 'face' строятся на сенсорных ощущениях, что делает их выразительным инструментом для описания эмоциональных состояний.\n",
+      "en": "\nFace as the center of emotional expression through physiological reactions:\n- Face temperature conveys inner states: heat ('hot in the face') is associated with excitement and embarrassment.\n- Cold ('cold hands slapping his face') reflects fear and anxiety.\nMetaphors with 'face' are built on sensory perceptions, making them an expressive tool for describing emotional states.\n"
+    }
+  },
+  {
+    "id": "head",
+    "name": "Голова/Мозг",
+    "englishName": "Head/Brain",
+    "image": "images/organ-2.png",
+    "description": {
+      "ru": "Центр умственного и эмоционального напряжения",
+      "en": "Center of mental and emotional tension"
+    },
+    "metaphors": [
+      {
+        "quote": "He felt as though he was screwing up his whole brain in concentration. (Rowling, 1999: 426)",
+        "emotion": "Чрезмерное напряжение, сосредоточенность.",
+        "imagery": "Образ завинчивания (screwing up) мозга передает ощущение сильного умственного напряжения.",
+        "structure": "Сравнительная конструкция 'felt as though' + метафорический глагол 'screwing up'.",
+        "concept": "Глагол 'screw up' в прямом смысле означает 'закручивать', что символизирует напряжение и скованность мыслительного процесса.",
+        "type": "Материальная (закручивание → эмоция), гиперболическая.",
+        "frequency": "Средняя",
+        "image": "images/metaphor-2-1.png"
+      },
+      {
+        "quote": "His head felt as though it was about to split in two. (Rowling, 1999: 248)",
+        "emotion": "Перевозбуждение, эмоциональный всплеск.",
+        "imagery": "Образ разделяющейся головы создает ощущение крайнего напряжения и перегруженности.",
+        "structure": "Сравнительная конструкция 'felt as though' + глагольная конструкция 'was about to split'.",
+        "concept": "Метафора гиперболизирует ощущение перегрузки, когда эмоции выходят из-под контроля.",
+        "type": "Материальная (разделение → эмоция), гиперболическая.",
+        "frequency": "Распространённая",
+        "image": "images/metaphor-2-2.png"
+      }
+    ],
+    "analysis": {
+      "ru": "\nГолова/Мозг как центр умственного и эмоционального напряжения:\n- Образы физического воздействия передают интенсивность эмоций: 'screwing up his whole brain' выражает чрезмерную концентрацию через метафору закручивания.\n- 'His head was about to split' передает ощущение перегруженности через образ раскалывающейся головы.\nИспользование гиперболы усиливает восприятие стресса и давления.\n",
+      "en": "\nHead/Brain as the center of mental and emotional tension:\n- Physical impact metaphors convey emotional intensity: 'screwing up his whole brain' expresses excessive concentration through the metaphor of tightening.\n- 'His head was about to split' conveys the feeling of being overwhelmed through the image of a splitting head.\nThe use of hyperbole enhances the perception of stress and pressure.\n"
+    }
+  },
+  {
+    "id": "stomach",
+    "name": "Желудок",
+    "englishName": "Stomach",
+    "image": "images/organ-3.png",
+    "description": {
+      "ru": "Центр переваривания эмоций",
+      "en": "Center of digesting emotions"
+    },
+    "metaphors": [
+      {
+        "quote": "Harry felt as though an ice cube had slipped down into his stomach… (Rowling, 2000: 12)",
+        "emotion": "Внезапное волнение, тревога, испуг.",
+        "imagery": "Образ холода и скольжения передаёт эффект оцепенения, близкий к страху.",
+        "structure": "Сравнительная конструкция 'as though' + образное существительное 'ice cube'.",
+        "concept": "В английском языке тревога часто передаётся через холод.",
+        "type": "Сенсорная (холод → эмоция), сравнительная",
+        "frequency": "Авторская",
+        "image": "images/metaphor-3-1.png"
+      },
+      {
+        "quote": "... feeling as though there was a golf-ball stuck in his throat (Rowling, 2000: 424)",
+        "emotion": "Тревожность, стресс, подавленность.",
+        "imagery": "Образ твёрдого мяча в горле создаёт ощущение физического препятствия, мешающего говорить или дышать.",
+        "structure": "Сравнительная конструкция 'as though' + объект метафоры ('golf-ball stuck in throat').",
+        "concept": "Русский аналог — 'ком в горле', но в английском варианте акцент на твёрдости объекта, что усиливает физический дискомфорт.",
+        "type": "Сенсорная (физическое ощущение → эмоция), сравнительная",
+        "frequency": "Редкая",
+        "image": "images/metaphor-3-2.png"
+      },
+      {
+        "quote": "He felt as though the bottom had dropped out of his stomach (Rowling, 1997: 371)",
+        "emotion": "Ощущение провала, страха, шока.",
+        "imagery": "Потеря опоры в желудке ассоциируется с ощущением падения в пустоту, что усиливает страх.",
+        "structure": "Сравнительная конструкция 'as though' + метафорический глагол 'dropped out'.",
+        "concept": "В русском языке нет точного аналога, но схожий эффект передаёт выражение 'сердце ушло в пятки'.",
+        "type": "Гиперболическая, сравнительная",
+        "frequency": "Редкая",
+        "image": "images/metaphor-3-3.png"
+      },
+      {
+        "quote": "He felt the excitement drain out of him as though someone had just pulled a plug in his stomach (Rowling, 2000: 403)",
+        "emotion": "Резкий спад эмоций, разочарование.",
+        "imagery": "Радость представлена как жидкость, утечка которой подчёркивает моментальное эмоциональное опустошение.",
+        "structure": "Сравнительная конструкция 'as though' + метафорическое действие ('pulled a plug').",
+        "concept": "В русском языке эмоции редко сравнивают с жидкостью, но можно привести аналог — 'как выжали', передающий ощущение усталости и опустошённости.",
+        "type": "Метонимическая (жидкость → эмоция), сравнительная",
+        "frequency": "Редкая",
+        "image": "images/metaphor-3-4.png"
+      },
+      {
+        "quote": "There was a leaden feeling in his stomach… (Rowling, 2000: 134)",
+        "emotion": "Тяжесть на душе, депрессия, уныние.",
+        "imagery": "Слово 'leaden' ('свинцовый') передаёт ощущение тяжести, как физической, так и эмоциональной.",
+        "structure": "Стандартная существительная конструкция 'a leaden feeling'.",
+        "concept": "Русский аналог — 'на душе как камень', что также подчёркивает физическую тяжесть эмоций.",
+        "type": "Сенсорная (вес → эмоция), устойчивая",
+        "frequency": "Распространённая",
+        "image": "images/metaphor-3-5.png"
+      },
+      {
+        "quote": "As he said it, his stomach flooded with a wave of molten panic (Rowling, 2000: 280)",
+        "emotion": "Острое чувство паники, неконтролируемый страх.",
+        "imagery": "Образ расплавленного металла подчёркивает жгучий, нестерпимый характер паники.",
+        "structure": "Глагольная конструкция 'flooded with a wave' + метафорический эпитет 'molten panic'.",
+        "concept": "В русском языке есть похожая концепция 'паника накрыла', но английский вариант усиливает эффект через образ жара.",
+        "type": "Сенсорная (жидкость/температура → эмоция), гиперболическая",
+        "frequency": "Распространённая",
+        "image": "images/metaphor-3-6.png"
+      },
+      {
+        "quote": "A large, dead weight seemed to fall through Harry's chest into his stomach (Rowling, 2000: 425)",
+        "emotion": "Чувство подавленности, тоски, шока.",
+        "imagery": "'Dead weight' ('мертвый груз') ассоциируется с внезапным ощущением тяжести внутри, как если бы что-то массивное физически упало в желудок.",
+        "structure": "Глагольная конструкция 'seemed to fall through' + существительное 'dead weight'.",
+        "concept": "Используется для описания эмоционального потрясения через ощущение физической тяжести.",
+        "type": "Материальная (вес → эмоция), гиперболическая",
+        "frequency": "Распространённая",
+        "image": "images/metaphor-3-7.png"
+      },
+      {
+        "quote": "His stomach slipped several notches (Rowling, 2000: 546)",
+        "emotion": "Резкое усиление волнения, беспокойства.",
+        "imagery": "Образ 'notches' ('деления шкалы') создает представление о градуированной шкале тревожности, а 'slipped' ('соскользнул') подчеркивает резкое падение контроля.",
+        "structure": "Глагольная конструкция 'slipped several notches'.",
+        "concept": "Подчеркивает внезапное усиление страха, показывая его измеримость.",
+        "type": "Пространственная (изменение положения → эмоция)",
+        "frequency": "Редкая",
+        "image": "images/metaphor-3-8.png"
+      },
+      {
+        "quote": "He felt a chill in his stomach (Rowling, 2000: 610)",
+        "emotion": "Подсознательная тревога, предчувствие опасности.",
+        "imagery": "Образ холода ассоциируется со страхом, оцепенением, особенно когда он ощущается в желудке – ключевом органе, реагирующем на стресс.",
+        "structure": "Глагольная конструкция 'felt a chill in' + объект метафоры 'his stomach'.",
+        "concept": "Связывает физическое ощущение холода с интуитивным предчувствием опасности.",
+        "type": "Сенсорная (температура → эмоция), метонимическая",
+        "frequency": "Устойчивая",
+        "image": "images/metaphor-3-9.png"
+      },
+      {
+        "quote": "Some sort of explosion took place in the pit of his stomach (Rowling, 1999: 408)",
+        "emotion": "Сильное эмоциональное потрясение – страх или негодование.",
+        "imagery": "Образ 'explosion' ('взрыв') создаёт представление о мгновенном, мощном выбросе эмоций.",
+        "structure": "Глагольная конструкция 'took place' + существительное 'explosion'.",
+        "concept": "Подчеркивает внезапность и интенсивность эмоций через образ разрушения.",
+        "type": "Гиперболическая, событийная (действие → эмоция)",
+        "frequency": "Распространённая",
+        "image": "images/metaphor-3-10.png"
+      },
+      {
+        "quote": "Mouth dry, stomach lurching, Harry sprang after him, trying not to make a sound (Rowling, 1998: 25)",
+        "emotion": "Внезапное волнение, страх перед неизвестностью.",
+        "imagery": "Образ 'stomach lurching' ('желудок кренится') ассоциируется с морской болезнью, неустойчивостью, физическим дискомфортом от тревоги.",
+        "structure": "Абсолютная конструкция 'stomach lurching'.",
+        "concept": "Отражает связь эмоций и физиологических реакций тела через нестабильность.",
+        "type": "Движенческая (нестабильность → эмоция), сравнительная",
+        "frequency": "Редкая",
+        "image": "images/metaphor-3-11.png"
+      },
+      {
+        "quote": "Harry ran up the hall into the kitchen and felt his stomach disappear (Rowling, 1998: 25)",
+        "emotion": "Крайний испуг, потеря контроля.",
+        "imagery": "Образ 'stomach disappear' ('желудок исчез') – это гипербола, создающая ощущение пустоты, возникающей от шока.",
+        "structure": "Глагольная конструкция 'felt his stomach disappear'.",
+        "concept": "Связывает экстремальный страх с ощущением потери центра тяжести.",
+        "type": "Гиперболическая, событийная (исчезновение → эмоция)",
+        "frequency": "Редкая",
+        "image": "images/metaphor-3-12.png"
+      },
+      {
+        "quote": "He had the horrible sensation that something very large was fighting to get out of his stomach (Rowling, 1999: 326)",
+        "emotion": "Тревога, нестерпимое беспокойство.",
+        "imagery": "Образ 'something fighting to get out' создаёт представление о страхе как о живом существе, пытающемся вырваться наружу.",
+        "structure": "Сложноподчинённое предложение с конструкцией 'had the sensation that'.",
+        "concept": "Персонифицирует эмоции, делая их осязаемыми и неконтролируемыми.",
+        "type": "Анималистическая (страх = живое существо), гиперболическая",
+        "frequency": "Авторская",
+        "image": "images/metaphor-3-13.png"
+      },
+      {
+        "quote": "Trying to ignore the sinking feeling of disappointment in his stomach… (Rowling, 2000: 172)",
+        "emotion": "Медленное осознание разочарования.",
+        "imagery": "Образ 'sinking feeling' ('тонущее чувство') создаёт эффект постепенного угасания эмоций.",
+        "structure": "Глагольная конструкция 'trying to ignore' + существительное 'sinking feeling'.",
+        "concept": "Передаёт ощущение эмоционального истощения через образ погружения.",
+        "type": "Движенческая (погружение → эмоция), сравнительная",
+        "frequency": "Устойчивая",
+        "image": "images/metaphor-3-14.png"
+      }
+    ],
+    "analysis": {
+      "ru": "\nЖелудок как центр тревоги и страха:\n- ‘His stomach flooded with a wave of molten panic’ — паника представлена как лавина, затопляющая желудок.\n- ‘His stomach slipped several notches’ — страх ощущается как резкое падение внутри.\n\nЖелудок как место эмоционального опустошения:\n- ‘He felt the excitement drain out of him as though someone had just pulled a plug in his stomach’ — эмоции утрачиваются, словно жидкость, уходящая через пробку.\n\nЖелудок как орган, реагирующий на стресс через физические ощущения:\n- ‘He felt a chill in his stomach’ — страх вызывает ощущение холода.\n- ‘There was a leaden feeling in his stomach’ — депрессия воспринимается как тяжесть.\n",
+      "en": "\nStomach as the center of anxiety and fear:\n- ‘His stomach flooded with a wave of molten panic’ — panic is represented as a wave flooding the stomach.\n- ‘His stomach slipped several notches’ — fear is felt as a sudden drop inside.\n\nStomach as a place of emotional depletion:\n- ‘He felt the excitement drain out of him as though someone had just pulled a plug in his stomach’ — emotions are lost like liquid draining through a plug.\n\nStomach as an organ reacting to stress through physical sensations:\n- ‘He felt a chill in his stomach’ — fear causes a sensation of cold.\n- ‘There was a leaden feeling in his stomach’ — depression is perceived as heaviness.\n"
+    }
+  },
+  {
+    "id": "heart",
+    "name": "Сердце",
+    "englishName": "Heart",
+    "image": "images/organ-4.png",
+    "description": {
+      "ru": "Центр любви и боли",
+      "en": "Center of love and pain"
+    },
+    "metaphors": [
+      {
+        "quote": "He felt his heart sinking / His heart sank (Rowling, 1999: 322)",
+        "emotion": "Подавленность, разочарование, уныние",
+        "imagery": "Образ движения вниз (ассоциация с тонущим предметом) передает потерю надежды и энергии",
+        "structure": "Предикатная конструкция (his heart sank) и Complex Object (he felt his heart sink)",
+        "concept": "Восприятие «вверх» как положительного (радость, успех) и «вниз» как отрицательного (грусть, поражение) подтверждает концепцию UP IS GOOD, DOWN IS BAD (Lakoff & Johnson)",
+        "type": "Движенческая (падение → эмоция), устойчивая",
+        "frequency": "Высокая",
+        "image": "images/metaphor-4-1.png"
+      },
+      {
+        "quote": "His heart felt lighter than air (Rowling, 2000: 315) / His heart was lighter than it had been in a month (Rowling, 1998: 270) / Harry's heart lightened considerably (Rowling, 1998: 92)",
+        "emotion": "Радость, облегчение, озарение",
+        "imagery": "Образ легкости (сердце становится легче воздуха) ассоциируется с подъемом настроения",
+        "structure": "Предикатная конструкция с to be (his heart was lighter), глагольная конструкция (his heart lightened considerably)",
+        "concept": "Противоположность метафоре «heart sinking»: если sinking означает упадок духа, то lightening символизирует освобождение от тревог и негативных эмоций",
+        "type": "Пространственная (легкость → эмоция), устойчивая",
+        "frequency": "Высокая",
+        "image": "images/metaphor-4-2.png"
+      },
+      {
+        "quote": "His heart doing a kind of drum-roll in his chest (Rowling, 1999: 441)",
+        "emotion": "Сильное волнение, тревога, напряжение",
+        "imagery": "Сердце сравнивается с барабанной дробью, передающей учащенное сердцебиение от волнения",
+        "structure": "Абсолютная конструкция (his heart doing a kind of drum-roll in his chest)",
+        "concept": "Связь звукового образа и эмоций: сильное волнение передается через звук барабана, что усиливает восприятие тревожности",
+        "type": "Звуковая (ритм → эмоция), сравнительная",
+        "frequency": "Средняя",
+        "image": "images/metaphor-4-3.png"
+      },
+      {
+        "quote": "His heart gave a leap (Rowling, 1997: 29)",
+        "emotion": "Волнение, предвкушение, испуг",
+        "imagery": "Образ скачка сердца (ассоциация с неожиданной реакцией на шок или радостное волнение)",
+        "structure": "Конструкция с give (his heart gave a leap), более образная, чем простое his heart leapt",
+        "concept": "Сравнение с устойчивыми выражениями to give a smile, to give a laugh, где конструкция give + Noun усиливает эмоциональную окраску",
+        "type": "Кинетическая (резкое движение → эмоция), сравнительная",
+        "frequency": "Средняя",
+        "image": "images/metaphor-4-4.png"
+      },
+      {
+        "quote": "Harry picked it up and stared at it, his heart twanging like a giant elastic band (Rowling, 1997: 42)",
+        "emotion": "Волнение, тревога, напряжение",
+        "imagery": "Образ натянутой эластичной ленты подчеркивает резкость, нервозность",
+        "structure": "Абсолютная конструкция (his heart twanging like a giant elastic band)",
+        "concept": "Глагол twang передает ощущение внезапного напряжения, подобного натянутой струне",
+        "type": "Акустическая (звук → эмоция), сравнительная",
+        "frequency": "Средняя",
+        "image": "images/metaphor-4-5.png"
+      },
+      {
+        "quote": "His heart thudded painfully (Rowling, 1999: 317)",
+        "emotion": "Сильное волнение, страх, напряжение",
+        "imagery": "Образ глухого удара сердца передает тревожное напряжение",
+        "structure": "Глагольная конструкция (his heart thudded painfully)",
+        "concept": "Использование звука (thud) как физической реакции на стресс усиливает восприятие страха",
+        "type": "Акустическая (звук → эмоция), устойчивая",
+        "frequency": "Высокая",
+        "image": "images/metaphor-4-6.png"
+      },
+      {
+        "quote": "His heart was pounding like a hammer (Rowling, 1999: 308)",
+        "emotion": "Испуг, адреналин, напряжение",
+        "imagery": "Сердце сравнивается с молотом, подчеркивая его интенсивную, ритмичную работу от страха",
+        "structure": "Сравнительная конструкция (his heart was pounding like a hammer)",
+        "concept": "Сравнение с сильным ударяющим предметом усиливает ощущение неконтролируемого страха",
+        "type": "Звуковая (ритм → эмоция), сравнительная",
+        "frequency": "Средняя",
+        "image": "images/metaphor-4-7.png"
+      },
+      {
+        "quote": "His heart was racing (Rowling, 1999: 320)",
+        "emotion": "Сильное волнение, паника",
+        "imagery": "Образ гонки сердца передает учащенное сердцебиение в моменты стресса",
+        "structure": "Глагольная конструкция (his heart was racing)",
+        "concept": "Связь движения и эмоций: сердце представлено как нечто несущееся вперед в неконтролируемом порыве",
+        "type": "Движенческая (быстрое движение → эмоция), устойчивая",
+        "frequency": "Высокая",
+        "image": "images/metaphor-4-8.png"
+      }
+    ],
+    "analysis": {
+      "ru": "\nСердце как ключевой символ эмоций и душевных переживаний:\n- Метафоры с heart передают эмоциональные переживания через движение, вес и звук.\n- Движение: сердце может «падать» (his heart sank), «подниматься» (his heart lightened), «прыгать» (his heart gave a leap).\n- Вес: «легкое» сердце ассоциируется с облегчением, «тяжелое» – с тоской и угнетением.\n- Звук и вибрация: метафоры his heart twanging like a giant elastic band и his heart doing a drum-roll создают эффект физического отклика эмоций.\n",
+      "en": "\nHeart as the key symbol of emotions and mental experiences:\n- Metaphors with heart convey emotional experiences through movement, weight, and sound.\n- Movement: the heart can \"fall\" (his heart sank), \"rise\" (his heart lightened), or \"jump\" (his heart gave a leap).\n- Weight: a \"light\" heart is associated with relief, while a \"heavy\" heart is linked to sadness and oppression.\n- Sound and vibration: metaphors like his heart twanging like a giant elastic band and his heart doing a drum-roll create the effect of a physical emotional response.\n"
+    }
+  },
+  {
+    "id": "chest",
+    "name": "Грудь",
+    "englishName": "Chest",
+    "image": "images/organ-5.png",
+    "description": {
+      "ru": "Центр эмоционального напряжения",
+      "en": "Center of emotional tension"
+    },
+    "metaphors": [
+      {
+        "quote": "Some of the anger ... seemed to burst through a dam in his chest. (Rowling, 2000: 262)",
+        "emotion": "Гнев, злоба",
+        "imagery": "Гнев представлен как сила, прорывающаяся через 'дамбу' в груди, что подчеркивает сильное эмоциональное напряжение",
+        "structure": "Глагольная конструкция 'burst through' + существительное 'dam in his chest'",
+        "concept": "Образ 'dam' (плотина, перегородка) символизирует внутренний барьер, сдерживающий эмоции. Прорыв этого барьера означает потерю контроля над чувствами.",
+        "type": "Материальная (преграда → эмоция), гиперболическая",
+        "frequency": "Редкая",
+        "image": "images/metaphor-5-1.png"
+      },
+      {
+        "quote": "The tight, tense knot in his chest seemed to ease slightly. (Rowling, 2000: 19)",
+        "emotion": "Тревога, напряженность, переход к спокойному состоянию",
+        "imagery": "Грудь представлена как место, где завязывается 'узел' напряжения, который затем ослабевает",
+        "structure": "Существительная конструкция 'tight, tense knot' + глагол 'ease'",
+        "concept": "Метафора передает ощущение скованности и сжатости, свойственной тревоге. Ослабление 'узла' символизирует постепенное улучшение эмоционального состояния.",
+        "type": "Сенсорная (напряжение → эмоция), динамическая",
+        "frequency": "Распространённая",
+        "image": "images/metaphor-5-2.png"
+      }
+    ],
+    "analysis": {
+      "ru": "\nГрудь как место подавления и ослабления эмоций:\n- Образ 'dam in his chest' символизирует эмоциональный барьер, сдерживающий чувства, который при сильном гневе разрушается.\n- Образ 'tight, tense knot in his chest' показывает тревожность как напряжение, завязывающееся в груди.\n",
+      "en": "\nChest as a place of suppression and weakening of emotions:\n- The image of 'dam in his chest' symbolizes an emotional barrier that holds back feelings and breaks under strong anger.\n- The image of 'tight, tense knot in his chest' shows anxiety as tension tied up in the chest.\n"
+    }
+  },
+  {
+    "id": "legs",
+    "name": "Ноги",
+    "englishName": "Legs",
+    "image": "images/organ-6.png",
+    "description": {
+      "ru": "Центр физической устойчивости",
+      "en": "Center of physical stability"
+    },
+    "metaphors": [
+      {
+        "quote": "His legs felt like water. (Rowling, 1998: 232)",
+        "emotion": "Испуг, потеря контроля над телом",
+        "imagery": "Образ превращения ног в воду символизирует слабость и потерю устойчивости из-за страха",
+        "structure": "Сравнительная конструкция 'felt like' + существительное 'water'",
+        "concept": "В русском языке аналог — 'подкосились ноги'.",
+        "type": "Сенсорная (жидкость → слабость), сравнительная",
+        "frequency": "Редкая",
+        "image": "images/metaphor-6-1.png"
+      },
+      {
+        "quote": "Some of the feelings started coming back to his legs. (Rowling, 1999: 380)",
+        "emotion": "Постепенное возвращение к нормальному состоянию, восстановление после страха",
+        "imagery": "Чувство, возвращающееся в ноги, передает образ выхода из состояния оцепенения",
+        "structure": "Глагольная конструкция 'started coming back' + объект 'feeling'",
+        "concept": "Используется концепция физического оцепенения как реакции на страх. В русском языке аналог — 'пришел в себя'.",
+        "type": "Фазовая (возвращение → восстановление эмоций), динамическая",
+        "frequency": "Средняя",
+        "image": "images/metaphor-6-2.png"
+      }
+    ],
+    "analysis": {
+      "ru": "\nНоги как символ контроля над телом:\n- 'His legs felt like water' символизирует потерю устойчивости из-за испуга.\n- 'Some of the feeling started coming back to his legs' передает ослабление страха.\n",
+      "en": "\nLegs as a symbol of control over the body:\n- 'His legs felt like water' symbolizes loss of stability due to fear.\n- 'Some of the feeling started coming back to his legs' conveys the weakening of fear.\n"
+    }
+  }
+]
